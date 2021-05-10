@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActivaCore.Api", "..\ActivaCore\ActivaCore.Api\ActivaCore.Api.csproj", "{A04DEB9A-6850-4DAC-A314-E1823816D2A0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A9E4152A-4F32-4D0F-B43A-8048A85E022E} = {A9E4152A-4F32-4D0F-B43A-8048A85E022E}
+		{596A1E34-E259-42A8-AD23-83A4E7167718} = {596A1E34-E259-42A8-AD23-83A4E7167718}
+		{585D8B7B-AAA0-45F4-8213-5EDC44945533} = {585D8B7B-AAA0-45F4-8213-5EDC44945533}
+		{62D63BE3-FD43-4279-BB9D-98576A294DC5} = {62D63BE3-FD43-4279-BB9D-98576A294DC5}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActivaCore.Repository", "..\ActivaCore\ActivaCore.Repository\ActivaCore.Repository.csproj", "{585D8B7B-AAA0-45F4-8213-5EDC44945533}"
+	ProjectSection(ProjectDependencies) = postProject
+		{62D63BE3-FD43-4279-BB9D-98576A294DC5} = {62D63BE3-FD43-4279-BB9D-98576A294DC5}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActivaCore.Helpers", "..\ActivaCore\ActivaCore.Helpers\ActivaCore.Helpers.csproj", "{A9E4152A-4F32-4D0F-B43A-8048A85E022E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{62D63BE3-FD43-4279-BB9D-98576A294DC5} = {62D63BE3-FD43-4279-BB9D-98576A294DC5}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActivaCore.Domain", "..\ActivaCore\ActivaCore.Domain\ActivaCore.Domain.csproj", "{62D63BE3-FD43-4279-BB9D-98576A294DC5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActivaCore.Application", "..\ActivaCore\ActivaCore.Application\ActivaCore.Application.csproj", "{596A1E34-E259-42A8-AD23-83A4E7167718}"
+	ProjectSection(ProjectDependencies) = postProject
+		{62D63BE3-FD43-4279-BB9D-98576A294DC5} = {62D63BE3-FD43-4279-BB9D-98576A294DC5}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActivaCore.FrontEnd", "..\ActivaCore\ActivaCore.FrontEnd\ActivaCore.FrontEnd.csproj", "{969D3A85-E67C-450A-B52E-0D3699522A84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A04DEB9A-6850-4DAC-A314-E1823816D2A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A04DEB9A-6850-4DAC-A314-E1823816D2A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A04DEB9A-6850-4DAC-A314-E1823816D2A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A04DEB9A-6850-4DAC-A314-E1823816D2A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{585D8B7B-AAA0-45F4-8213-5EDC44945533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{585D8B7B-AAA0-45F4-8213-5EDC44945533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{585D8B7B-AAA0-45F4-8213-5EDC44945533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{585D8B7B-AAA0-45F4-8213-5EDC44945533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9E4152A-4F32-4D0F-B43A-8048A85E022E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9E4152A-4F32-4D0F-B43A-8048A85E022E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9E4152A-4F32-4D0F-B43A-8048A85E022E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9E4152A-4F32-4D0F-B43A-8048A85E022E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62D63BE3-FD43-4279-BB9D-98576A294DC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D63BE3-FD43-4279-BB9D-98576A294DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D63BE3-FD43-4279-BB9D-98576A294DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D63BE3-FD43-4279-BB9D-98576A294DC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{596A1E34-E259-42A8-AD23-83A4E7167718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{596A1E34-E259-42A8-AD23-83A4E7167718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{596A1E34-E259-42A8-AD23-83A4E7167718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{596A1E34-E259-42A8-AD23-83A4E7167718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{969D3A85-E67C-450A-B52E-0D3699522A84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{969D3A85-E67C-450A-B52E-0D3699522A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{969D3A85-E67C-450A-B52E-0D3699522A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{969D3A85-E67C-450A-B52E-0D3699522A84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5601BAB3-8E77-4C09-93FD-0E2850857222}
+	EndGlobalSection
+EndGlobal
