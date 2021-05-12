@@ -5,4 +5,5 @@ namespace ActivaCore.Domain
     public class Class1
     {
     }
+
 }
