@@ -37,9 +37,12 @@ namespace ActivaCore.Api
             services.AddScoped<IGenericRepository<Entidad>, GenericRepository<Entidad>>();
             services.AddDbContext<ActivaContext>(
                 options => options
-                .UseSqlServer(Configuration.GetConnectionString("database"))
+                .UseSqlServer(Configuration.GetConnectionString("database"),sqlServerOptionsAction : sqlOption => {
+                    sqlOption.EnableRetryOnFailure();
+                    })
                 .EnableSensitiveDataLogging()
                 .EnableDetailedErrors()
+                
                 );
 
             services.AddSwaggerGen(c =>
