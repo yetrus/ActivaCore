@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ActivaCore.Domainq
+namespace ActivaCore.Domain
 {
     public interface IFileProcesor
     {

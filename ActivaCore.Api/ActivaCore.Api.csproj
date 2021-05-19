@@ -16,4 +16,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.5.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ActivaCore.Application\ActivaCore.Application.csproj" />
+    <ProjectReference Include="..\ActivaCore.Domain\ActivaCore.Domain.csproj" />
+    <ProjectReference Include="..\ActivaCore.Helpers\ActivaCore.Helpers.csproj" />
+    <ProjectReference Include="..\ActivaCore.Repository\ActivaCore.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
