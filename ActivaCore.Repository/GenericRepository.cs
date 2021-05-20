@@ -50,8 +50,7 @@ namespace ActivaCore.Repository
         {
             IQueryable<TEntity> query = dbSet;          
             
-                return query.ToList();
-           
+                return query.ToList();           
         }
 
         public virtual TEntity GetByID(object id)

@@ -29,6 +29,12 @@ namespace ActivaCore.Api.Controllers
             return EntidadService.GetList();
         }
 
+        [HttpGet("{id}")]
+        public Entidad Get(int id)
+        {            
+            return EntidadService.Get(id);
+        }
+
         //public IActionResult Index()
         //{
         //    return View();

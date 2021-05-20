@@ -15,6 +15,10 @@ namespace ActivaCore.Application
         {
             return Repository.Get();
         }
+        public Entidad Get(object  id)
+        {
+            return Repository.GetByID(id);
+        }
     }
 
     
