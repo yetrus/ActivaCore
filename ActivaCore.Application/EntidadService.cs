@@ -19,6 +19,12 @@ namespace ActivaCore.Application
         {
             return Repository.GetByID(id);
         }
+
+        public void Create(string nombre)
+        {
+            Repository.Insert(new Entidad(nombre));
+            Repository.Save();
+        }
     }
 
     

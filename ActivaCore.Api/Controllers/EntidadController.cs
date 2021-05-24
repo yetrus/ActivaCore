@@ -11,8 +11,6 @@ namespace ActivaCore.Api.Controllers
 {
     [Route("Api/[controller]")]
     [ApiController]   
-
-
     public class EntidadController : Controller
     {
 
@@ -23,10 +21,14 @@ namespace ActivaCore.Api.Controllers
             EntidadService = entidadService;        
         }
 
+
+
+
         [HttpGet]
-        public IEnumerable<Entidad> Get()
+        public IActionResult Get()
+        //public IEnumerable<Entidad> Get()
         {
-            return EntidadService.GetList();
+            return Ok(EntidadService.GetList());
         }
 
         [HttpGet("{id}")]
@@ -35,9 +37,13 @@ namespace ActivaCore.Api.Controllers
             return EntidadService.Get(id);
         }
 
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
+
+        [HttpPost]
+        public void Post([FromBody] Entidad entidad)
+        {
+            EntidadService.Create(entidad.Nombre);
+        }
+
+        
     }
 }

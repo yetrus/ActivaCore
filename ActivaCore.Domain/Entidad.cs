@@ -3,12 +3,18 @@ using System.Collections.Generic;
 
 namespace ActivaCore.Domain
 {
-    public partial class Entidad
+    public class Entidad
     {
-        public Entidad()
+        //public Entidad()
+        //{
+        //    ContactoNavigation = new HashSet<Contacto>();
+        //}
+
+        public Entidad(string nombre)
         {
-            ContactoNavigation = new HashSet<Contacto>();
+            Nombre = nombre;
         }
+
 
         public int IdEntidad { get; set; }
         public int Rut { get; set; }
