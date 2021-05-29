@@ -15,7 +15,7 @@ namespace ActivaCore.Application
         {
             return Repository.Get();
         }
-        public Entidad Get(object  id)
+        public Entidad Get(object id)
         {
             return Repository.GetByID(id);
         }
@@ -25,8 +25,14 @@ namespace ActivaCore.Application
             Repository.Insert(new Entidad(nombre));
             Repository.Save();
         }
+
+        public void Delete(Entidad entidad)
+        {
+            Repository.Delete(entidad);
+            Repository.Save();
+        }
     }
 
-    
+
 
 }

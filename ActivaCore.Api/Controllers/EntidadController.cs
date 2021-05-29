@@ -22,9 +22,6 @@ namespace ActivaCore.Api.Controllers
             EntidadService = entidadService;
         }
 
-
-
-
         [HttpGet]
         public IActionResult Get()
         //public IEnumerable<Entidad> Get()
@@ -46,6 +43,11 @@ namespace ActivaCore.Api.Controllers
             return StatusCode(200);
         }
 
-
+        [HttpDelete("{id}")]
+        public void DeleteEntidad(int id  )
+        {
+            var entidad = EntidadService.Get(id);          
+            EntidadService.Delete(entidad);
+        }
     }
 }
