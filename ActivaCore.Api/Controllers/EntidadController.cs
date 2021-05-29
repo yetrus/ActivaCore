@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 using ActivaCore.Application;
 using ActivaCore.Domain;
 using ActivaCore.Helpers;
+using ActivaCore.Api.Models;
 
 namespace ActivaCore.Api.Controllers
 {
     [Route("Api/[controller]")]
-    [ApiController]   
+    [ApiController]
     public class EntidadController : Controller
     {
 
@@ -18,7 +19,7 @@ namespace ActivaCore.Api.Controllers
 
         public EntidadController(EntidadService entidadService)
         {
-            EntidadService = entidadService;        
+            EntidadService = entidadService;
         }
 
 
@@ -32,18 +33,19 @@ namespace ActivaCore.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public Entidad Get(int id)
-        {            
+        public Domain.Entidad Get(int id)
+        {
             return EntidadService.Get(id);
         }
 
 
         [HttpPost]
-        public void Post([FromBody] Entidad entidad)
+        public IActionResult CreateEntidad([FromBody] CreateEntidad entidad)
         {
             EntidadService.Create(entidad.Nombre);
+            return StatusCode(200);
         }
 
-        
+
     }
 }
