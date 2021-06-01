@@ -7,6 +7,7 @@ using ActivaCore.Application;
 using ActivaCore.Domain;
 using ActivaCore.Helpers;
 using ActivaCore.Api.Models;
+using AutoMapper;
 
 namespace ActivaCore.Api.Controllers
 {
@@ -15,6 +16,7 @@ namespace ActivaCore.Api.Controllers
     public class EntidadController : Controller
     {
 
+        private IMapper _mapper;
         public EntidadService EntidadService { get; }
 
         public EntidadController(EntidadService entidadService)
@@ -37,17 +39,29 @@ namespace ActivaCore.Api.Controllers
 
 
         [HttpPost]
-        public IActionResult CreateEntidad([FromBody] CreateEntidad entidad)
+        public IActionResult CreateEntidad([FromBody] EntidadCreate entidad)
         {
-            EntidadService.Create(entidad.Nombre);
+            EntidadService.Create(entidad.Rut, entidad.Nombre);
             return StatusCode(200);
         }
 
         [HttpDelete("{id}")]
-        public void DeleteEntidad(int id  )
+        public void DeleteEntidad(int id)
         {
-            var entidad = EntidadService.Get(id);          
+            var entidad = EntidadService.Get(id);
             EntidadService.Delete(entidad);
         }
+
+        //[HttpPut("{id}")]
+        //public void UpdateEntidad(int id, [FromBody] EntidadUpdate entidadUpdate)
+        //{
+        //    var entidadEntity = EntidadService.Get(id);
+
+        //  _mapper.Map<Domain.Entidad>(entidadEntity);
+
+        //    // entidad.IdEntidad = id;
+
+        //    EntidadService.Update(entidad);
+        //}
     }
 }

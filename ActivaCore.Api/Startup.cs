@@ -1,22 +1,15 @@
+using ActivaCore.Application;
+using ActivaCore.Domain;
+using ActivaCore.Repository;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ActivaCore.Domain;
-using ActivaCore.Application;
-using ActivaCore.Helpers;
-using ActivaCore.Repository;
-using Microsoft.EntityFrameworkCore;
-
 namespace ActivaCore.Api
 {
     public class Startup
@@ -31,8 +24,10 @@ namespace ActivaCore.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            //   services.AddControllers();
+            
             services.AddScoped<EntidadService>();
             services.AddScoped<IGenericRepository<Entidad>, GenericRepository<Entidad>>();
             services.AddDbContext<ActivaContext>(
@@ -44,11 +39,29 @@ namespace ActivaCore.Api
                 .EnableDetailedErrors()
                 
                 );
-
+           
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ActivaCore.Api", Version = "v1" });
             });
+            //var mapperConfig = new MapperConfiguration(mc =>
+            //{
+            //    mc.AddProfile(new MappingProfile());
+            //});
+
+            //IMapper mapper = mapperConfig.CreateMapper();
+            //services.AddSingleton(mapper);
+
+            //services.AddAutoMapper(typeof(Startup));
+            //   services.AddControllers();
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

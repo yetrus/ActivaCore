@@ -10,8 +10,9 @@ namespace ActivaCore.Domain
         //    ContactoNavigation = new HashSet<Contacto>();
         //}
 
-        public Entidad(string nombre)
+        public Entidad(int rut ,  string nombre )
         {
+            Rut = rut;
             Nombre = nombre;
         }
 
@@ -36,7 +37,7 @@ namespace ActivaCore.Domain
         public int? Persona { get; set; }
         public int? IdComuna { get; set; }
         public string Pass { get; set; }
-        public byte[] Huella { get; set; }
+      //  public byte[] Huella { get; set; }
 
         public virtual Categoria IdCategoriaNavigation { get; set; }
         public virtual AppComuna IdComunaNavigation { get; set; }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ActivaCore.Api.Models
 {
-    public partial class CreateEntidad
+    public partial class EntidadCreate
     {
         //public CreateEntidad()
         //{

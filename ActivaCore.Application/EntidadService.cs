@@ -1,6 +1,8 @@
 ﻿using System;
 using ActivaCore.Domain;
+
 using System.Collections.Generic;
+
 namespace ActivaCore.Application
 {
     public class EntidadService
@@ -20,9 +22,9 @@ namespace ActivaCore.Application
             return Repository.GetByID(id);
         }
 
-        public void Create(string nombre)
+        public void Create(int rut, string nombre)
         {
-            Repository.Insert(new Entidad(nombre));
+            Repository.Insert(new Entidad(rut, nombre));
             Repository.Save();
         }
 
@@ -30,6 +32,13 @@ namespace ActivaCore.Application
         {
             Repository.Delete(entidad);
             Repository.Save();
+        }
+
+        public void Update( Entidad entidad)
+        {
+            Repository.Update(entidad);
+            Repository.Save();
+
         }
     }
 

@@ -390,7 +390,7 @@ namespace ActivaCore.Repository
                     .HasColumnName("dv")
                     .HasMaxLength(1);
 
-                entity.Property(e => e.Huella).HasMaxLength(5000);
+                //entity.Property(e => e.Huella).HasMaxLength(5000);
 
                 entity.Property(e => e.IdCategoria).HasColumnName("Id_Categoria");
 
