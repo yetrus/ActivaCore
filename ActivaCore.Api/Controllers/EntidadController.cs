@@ -57,7 +57,7 @@ namespace ActivaCore.Api.Controllers
         //{
         //    var entidadEntity = EntidadService.Get(id);
 
-        //  _mapper.Map<Domain.Entidad>(entidadEntity);
+        //    _mapper.Map<Domain.Entidad>(entidadEntity);
 
         //    // entidad.IdEntidad = id;
 

@@ -30,6 +30,9 @@ namespace ActivaCore.Api
             
             services.AddScoped<EntidadService>();
             services.AddScoped<IGenericRepository<Entidad>, GenericRepository<Entidad>>();
+            services.AddScoped<TipoService>();
+            services.AddScoped<IGenericRepository<Tipo>, GenericRepository<Tipo>>();
+
             services.AddDbContext<ActivaContext>(
                 options => options
                 .UseSqlServer(Configuration.GetConnectionString("database"),sqlServerOptionsAction : sqlOption => {
