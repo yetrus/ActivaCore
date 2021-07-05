@@ -16,18 +16,18 @@ namespace ActivaCore.Api.Controllers
     [ApiController]
     public class TipoController : Controller
     {
-        
+
         public TipoService TipoService { get; }
         // GET: TipoController
 
-        private IMapper _mapper;        
+        private IMapper _mapper;
 
         public TipoController(TipoService tipoService)
         {
             TipoService = tipoService;
         }
-                
-        
+
+
         [HttpGet]
         public IActionResult Get()
         //public IEnumerable<Models.Tipo> Get()
@@ -39,6 +39,34 @@ namespace ActivaCore.Api.Controllers
         public Domain.Tipo Get(int id)
         {
             return TipoService.Get(id);
+        }
+
+        [HttpPost]
+        public IActionResult CreateTipo([FromBody] TipoCreate tipo)
+        {
+            TipoService.Create(tipo.Descripcion, tipo.IdSubTipo);
+            return StatusCode(200);
+        }
+
+        [HttpPut("{id}")]
+        //[Route("UpdatePost")]
+        public IActionResult UpdatePost(int id, [FromBody] Domain.Tipo tipo)
+        {
+            tipo.IdTipo = id;
+            TipoService.Update(tipo);
+            return Ok(tipo);
+        }
+
+        [HttpDelete("{id}")]
+        //[Route("UpdatePost")]
+        public IActionResult DeleteTipo(int id, [FromBody] Domain.Tipo tipo)
+        {
+            tipo =  TipoService.Get(id);
+            tipo.FechaEdicion = DateTime.Now;
+            tipo.UsuarioEdicion = 5;
+            tipo.Activo = false;            
+            TipoService.Update(tipo);
+            return Ok(tipo);
         }
     }
 }
