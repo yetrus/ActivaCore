@@ -22,5 +22,16 @@ namespace ActivaCore.Application
         {
             return Repository.GetByID(id);
         }
+
+        public void Create(string descripcion, int? idSubTipo)
+        {
+            Repository.Insert(new Tipo(descripcion, idSubTipo));
+            Repository.Save();
+        }
+        public void Update(Tipo tipo)
+        {
+            Repository.Update(tipo);
+            Repository.Save();
+        }
     }
 }

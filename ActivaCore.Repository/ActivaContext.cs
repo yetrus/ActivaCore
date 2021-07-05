@@ -443,10 +443,10 @@ namespace ActivaCore.Repository
                     .HasForeignKey(d => d.IdEstado)
                     .HasConstraintName("FK_Entidad_Estado");
 
-                entity.HasOne(d => d.IdTipoNavigation)
-                    .WithMany(p => p.Entidad)
-                    .HasForeignKey(d => d.IdTipo)
-                    .HasConstraintName("FK_Entidad_Tipo");
+                //entity.HasOne(d => d.IdTipoNavigation)
+                //    .WithMany(p => p.Entidad)
+                //    .HasForeignKey(d => d.IdTipo)
+                //    .HasConstraintName("FK_Entidad_Tipo");
             });
 
             modelBuilder.Entity<EntidadTipo>(entity =>

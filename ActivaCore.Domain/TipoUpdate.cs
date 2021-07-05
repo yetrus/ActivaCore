@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ActivaCore.Domain
 {
-    public class Tipo
+    public class TipoUpdate
     {
-        public Tipo(string descripcion, int? idSubTipo )
+        public TipoUpdate(string descripcion, int? idSubTipo )
         //public Tipo(string descripcion)
         //    public Tipo()
         {
@@ -17,12 +17,7 @@ namespace ActivaCore.Domain
         public int IdTipo { get; set; }
         public string Descripcion { get; set; }
         public int? IdSubTipo { get; set; }
-        public bool? Activo { get; set; }
-        public DateTime? FechaCreacion { get; set; }
-        public DateTime? FechaEdicion { get; set; }
-        public int? UsuarioCreacion { get; set; }
-        public int? UsuarioEdicion { get; set; }
 
-        //public virtual ICollection<Entidad> Entidad { get; set; }
+        public virtual ICollection<Entidad> Entidad { get; set; }
     }
 }
